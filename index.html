@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		input[type=text],input[type=email],select,textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=submit],select{
+	background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  margin: 4px 0px;
+  cursor: pointer;
+	</style>
+</head>
+<body>
+<h1>Registration Form</h1>
+<form onsubmit="return myfunction()">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="fname1">Last name:</label>
+  <input type="text" id="fname1" name="fname1"><br><br>
+  <label for="fname2">Email:</label>
+  <input type="email" id="fname2" name="fname2"><br><br>
+  <label for="fname3">Address:</label>
+  <textarea id="fname3" name="fname3"></textarea><br><br>
+  <label for="fname4">Gender:</label>
+   <input type="radio" id="fname4" name="fname4" value="30">
+  <label for="age1">Male</label>
+  <input type="radio" id="fname5" name="fname4" value="60">
+  <label for="age2">Female</label><br><br>
+  <label for="checkbox" >Course:</label>
+  <input type="checkbox" id="fname8" name="fnames[]" value="Btech">
+  <label for="vehicle1">Btech</label>
+  <input type="checkbox" id="fname9" name="fnames[]" value="Bca">
+  <label for="vehicle2">Bca</label>
+  <input type="checkbox" id="fname10" name="fnames[]" value="Bsc">
+  <label for="vehicle3">Bsc</label><br><br>
+   <label for="cars">Select District:</label>
+  <select name="cars" id="fname6">
+  	<option selected disabled value="">Select Here:</option>
+    <option value="ks">kasargod</option>
+    <option value="knr">Kannur</option>
+    <option value="wd">Wayanad</option>
+    <option value="Koz">Kozhikode</option>
+    <option value="mal">Malappuram</option>
+    <option value="pkd">Palakkad</option>
+    <option value="Thr">Thrissur</option>
+    <option value="erm">Eranakulam</option>
+    <option value="idk">Idukki</option>
+    <option value="ktm">Alappuzha</option>
+    <option value="alp">Kottayam</option>
+    <option value="ptm">Pathanamthitta</option>
+    <option value="kol">Kollam</option>
+    <option value="trm">Thiruvananthapuram</option>
+  </select><br><br>
+  
+  <input type="submit" value="Submit">
+  <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+</form>
+<script>
+	function myfunction(){
+	var a=document.getElementById("fname").value;
+	var b=document.getElementById("fname1").value;
+	var c=document.getElementById("fname2").value;
+	var d=document.getElementById("fname3").value;
+	var e=document.getElementById("fname4");
+  var f=document.getElementById("fname5");
+  var h=document.getElementsByName("fnames[]");
+  var g=document.getElementById("fname6").value;
+  
+	
+	if(a==""){
+		alert("please enter the name");
+    return false;
+	}
+	if(b==""){
+		alert("please enter the last name");
+    return false;
+	}
+	if (c=="") {
+		alert("please enter the Email");
+    return false;
+	}
+  if (d=="") {
+    alert("please enter Address");
+    return false;
+  }
+  if(e.checked==false && f.checked==false) {
+    alert("please enter gender");
+    return false;
+  }
+  if(h[0].checked==false && h[1].checked==false && h[2].checked==false){
+    alert("please select course");
+    return false;
+  }
+  if(g==""){
+    alert("please select");
+    return false;
+  }
+
+}
+</script>
+
+</body>
+</html>
+
